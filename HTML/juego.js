@@ -1,3 +1,4 @@
+var elementos = ["H","Li","Na","K","Rb","Cs","Fr","Be","Mg","Ca","Sr","Ba","Ra"];
 var formulaReactivo = [];
 var formulaProducto = [];
 
