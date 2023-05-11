@@ -1,6 +1,6 @@
 var elementos = ["H","Li","Na","K","Rb","Cs","Fr","Be","Mg","Ca","Sr","Ba","Ra","Sc","Ti","V","Cr","Mn","Fe","Co","Ni","Cu","Zn"];
 var elementosFormula = [];
-var formulaReactivo = ["Na2CrO3","H2","Cu2"];
+var formulaReactivo = [];
 var formulaProducto = [];
 
 function dibujarReactivos(numero){
@@ -8,6 +8,13 @@ var n = numero;
 
 var alto = 50;
 var largo = 70;
+
+//Método para ver si funciona, tiene que mejorarse después
+for(let i = 0; i<n;i++){
+formulaReactivo[i] = promt("Pon la formula nº" + i++);
+}
+
+guardarElementos();
 
 }
 
@@ -19,4 +26,9 @@ for(let i = 0; i<=elementos.length;i++){
   }
 }
 }
+}
+
+//Comprobación
+for(let i = 0; i<=elementosFormula.length(); i++){
+console.log(elementosFormula[i];
 }
