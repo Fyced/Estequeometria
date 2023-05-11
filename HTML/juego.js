@@ -4,31 +4,30 @@ var formulaReactivo = [];
 var formulaProducto = [];
 
 function dibujarReactivos(numero){
-var n = numero;
+  var n = numero;
 
-var alto = 50;
-var largo = 70;
+  var alto = 50;
+  var largo = 70;
 
-//Método para ver si funciona, tiene que mejorarse después
-for(let i = 0; i<n;i++){
-formulaReactivo[i] = promt("Pon la formula nº" + i++);
-}
+  //Método para ver si funciona, tiene que mejorarse después
+  for(let i = 0; i<n;i++){
+    formulaReactivo[i] = prompt("Pon la formula nº" + i);
+  }
 
-guardarElementos();
-
+  guardarElementos();
 }
 
 function guardarElementos(){
-  for(let e = 0; e<=formulaReactivo.length; e++){
-for(let i = 0; i<=elementos.length;i++){
-  if(formulaReactivo[e].includes(elementos[i])==true){
-    elementosFormula.push(elementos[i]);
+  for(let e = 0; e < formulaReactivo.length; e++){
+    for(let i = 0; i < elementos.length - 1; i++){
+      if(formulaReactivo[e].includes(elementos[i])==true){
+        elementosFormula.push(elementos[i]);
+      }
+    }
   }
-}
-}
 }
 
 //Comprobación
-for(let i = 0; i<=elementosFormula.length(); i++){
-console.log(elementosFormula[i];
+for(let i = 0; i < elementosFormula.length; i++){
+  console.log(elementosFormula[i]);
 }
