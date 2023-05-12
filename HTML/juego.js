@@ -1,4 +1,4 @@
-var elementos = ["H","Li","Na","K","Rb","Cs","Fr","Be","Mg","Ca","Sr","Ba","Ra","Sc","Ti","V","Cr","Mn","Fe","Co","Ni","Cu","Zn"];
+var elementos = ["H","Li","Na","K","Rb","Cs","Fr","Be","Mg","Ca","Sr","Ba","Ra","Sc","Ti","V","Cr","Mn","Fe","Co","Ni","Cu","Zn","Pd","Ag","Cd","Pt","Au","Hg","B","Al","Ga","In"];
 var elementosFormula = [];
 var formulaReactivo = [];
 var formulaProducto = [];
@@ -25,9 +25,19 @@ function guardarElementos(){
       }
     }
   }
-}
 
 //Comprobación
-for(let i = 0; i < elementosFormula.length; i++){
+/*for(let i = 0; i < elementosFormula.length; i++){
   console.log(elementosFormula[i]);
+}*/
+
+calculosEstequiometricos();
 }
+
+//Hacer if(elementosFormula[i]=elementosFormula[e]) para que compruebe si se repiten
+function calculosEstequiometricos(){
+for(let i = 0; i<elementosFormula; i++){
+for
+}
+}
+
