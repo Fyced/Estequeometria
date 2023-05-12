@@ -141,3 +141,9 @@ for(let i = 0; i<numeroElementosProductos.length - 1; i++){
   console.log(numeroElementosProductos[i]);
 }
 }
+
+/*Errores
+Si pones los mismos elementos en reactivos || excepciones LiFe, LiNa || ocurre con LiO, LiB
+
+Si pones Na tmb detecta N, hay que verlo
+*/
