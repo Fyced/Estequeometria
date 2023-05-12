@@ -1,4 +1,4 @@
-var elementos = ["H","Li","Na","K","Rb","Cs","Fr","Be","Mg","Ca","Sr","Ba","Ra","Sc","Ti","V","Cr","Mn","Fe","Co","Ni","Cu","Zn","Pd","Ag","Cd","Pt","Au","Hg","B","Al","Ga","In"];
+var elementos = ["H","Li","Na","K","Rb","Cs","Fr","Be","Mg","Ca","Sr","Ba","Ra","Sc","Ti","V","Cr","Mn","Fe","Co","Ni","Cu","Zn","Pd","Ag","Cd","Pt","Au","Hg","B","Al","Ga","In","Tl","C","Si","Ge","Sn","Pb","N","P","As","Sb","Bi","O","S","Se","Te","Po","F","Cl","Br","I","At"];
 var elementosFormula = [];
 var formulaReactivo = [];
 var formulaProducto = [];
