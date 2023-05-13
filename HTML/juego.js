@@ -168,5 +168,10 @@ for(let i = 0; i<numeroElementosProductos.length - 1; i++){
 }
 
 /*Errores
-Si pones los mismos elementos en reactivos falla || excepciones LiFe, LiNa || ocurre con LiO, LiB
+Si pones los mismos elementos en reactivos || excepciones LiFe, LiNa || ocurre con LiO, LiB
+
+Si pones Na tmb detecta N, hay que verlo
+
+Se ponen 1 de mas al ver las veces que se repiten los elementos en la formula
 */
+
