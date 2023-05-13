@@ -1,3 +1,5 @@
+//Probar añadiendo a cada elemento %d y que en elementosFormulaReactivo se guarde tmb el que sera numeroElementosReactivoFormula || Ej. input NaO2 --> Na, O2
+
 var alto = 50;
 var largo = 70;
 
