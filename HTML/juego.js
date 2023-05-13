@@ -1,13 +1,19 @@
 var alto = 50;
 var largo = 70;
 
-var elementos = ["H","Li","Na","K","Rb","Cs","Fr","Be","Mg","Ca","Sr","Ba","Ra","Sc","Ti","V","Cr","Mn","Fe","Co","Ni","Cu","Zn","Pd","Ag","Cd","Pt","Au","Hg","B","Al","Ga","In","Tl","C","Si","Ge","Sn","Pb","N","P","As","Sb","Bi","O","S","Se","Te","Po","F","Cl","Br","I","At"];
+var elementos = ["Li","Na","K","Rb","Cs","Fr","Be","Mg","Ca","Sr","Ba","Ra","Sc","Ti","V",
+                "Cr","Mn","Fe","Co","Ni","Cu","Zn","Pd","Ag","Cd","Pt","Au","Hg","Al","Ga",
+                "In","Tl","C","Si","Ge","Sn","Pb","As","Sb","Bi","O","Se","Te","Po",
+                "F","Cl","Br","I","At","H","N","P","B","S"];
 
 	//Variables Reactivos
 var elementosFormulaReactivo = [];
 var formulaReactivo = [];
-	//Variable que te dice las veces que se repiten los elementos del reactivo
+	//Variable que te dice las veces que se repiten los elementos del reactivo en diferentes formulas
 var numeroElementosReactivo = [];
+  //Variable que te dice las veces que se repiten los elementos del reactivo en la misma formulas
+var numeroElementosReactivoFormula = [];
+
 
 	//Variables Productos
 var elementosFormulaProductos = [];
@@ -21,26 +27,39 @@ function dibujarReactivos(numero){
 
 //Método para captar las formulas quimicas, tiene que mejorarse después
   for(let i = 0; i<n;i++){
-    formulaReactivo[i] = prompt("Pon la formula nº" + i);
+    formulaReactivo[i] = prompt("Pon la formula n." + i);
   }
 
   guardarElementosReactivo();
 }
 
 function guardarElementosReactivo(){
-	//Guardar los elementos que se usan en las formulas quimicas
+  var numeros = [0,1,2,3,4,5,6,7,8,9];
+
+	   //Guardar los elementos que se usan en las formulas quimicas
   for(let e = 0; e < formulaReactivo.length; e++){
-    for(let i = 0; i < elementos.length - 1; i++){
+    for(let i = 0; i < elementos.length; i++){
       if(formulaReactivo[e].includes(elementos[i])==true){
         elementosFormulaReactivo.push(elementos[i]);
       }
     }
   }
 
-	//Bucle para aumentar numeroElementos dependiendo de los elementos que hayan en la formula
+	   //Bucle para aumentar numeroElementos dependiendo de los elementos que hayan en la formula
   for(let i = 0; i<elementosFormulaReactivo.length; i++){
   numeroElementosReactivo.push(1);
   }
+
+    //Bucle para ver cuantas veces se repiten los elementos dentro de la misma formula
+  for(let e = 0; e<formulaReactivo.length; e++){
+  for(let i = 0; i<numeros.length; i++){
+  if(formulaReactivo[e].includes(numeros[i])==true){
+  numeroElementosReactivoFormula.push(numeros[i]);
+} else {
+  numeroElementosReactivoFormula.push(1);
+}
+  }
+}
 
 calculosEstequiometricosReactivos();
 }
@@ -65,7 +84,6 @@ comprobar();
 	//FUNCIONES PRODUCTOS
 function dibujarProductos(numero){
 var n = numero;
-console.log("prueba");
 
 	//Método para captar las formulas quimicas, tiene que mejorarse después
   for(let i = 0; i<n;i++){
@@ -123,6 +141,11 @@ console.log("Ver si se repiten");
 for(let i = 0; i<numeroElementosReactivo.length - 1; i++){
   console.log(numeroElementosReactivo[i]);
 }
+
+console.log("Veces que se repiten los elementos en la formula")
+for(let i = 0; i<numeroElementosReactivoFormula.length;i++){
+  console.log(numeroElementosReactivoFormula[i]);
+}
 }
 
 	//Comprobar productos
@@ -143,7 +166,5 @@ for(let i = 0; i<numeroElementosProductos.length - 1; i++){
 }
 
 /*Errores
-Si pones los mismos elementos en reactivos || excepciones LiFe, LiNa || ocurre con LiO, LiB
-
-Si pones Na tmb detecta N, hay que verlo
+Si pones los mismos elementos en reactivos falla || excepciones LiFe, LiNa || ocurre con LiO, LiB
 */
