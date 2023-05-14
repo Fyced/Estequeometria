@@ -1,0 +1,170 @@
+h1{font-weight: normal;}
+
+.boton-container {
+  font-style: italic;
+  position: fixed;
+  width: 50px;
+  height: 50px;
+}
+
+button {
+  width: 100%;
+  height: 100%;
+}
+
+.no-elementos{
+  width: 30px;
+  height: 30px;
+}
+
+.Alcalinos{
+  position: inherit;
+  width: inherit;
+  height: inherit;
+  left: 15%;
+  top: 25%;
+}
+
+.Alcalinoterreos{
+  position: inherit;
+  width: inherit;
+  height: inherit;
+  left: 18.15%;
+  top: 31.55%;
+}
+
+.MetalesTransicion{
+  position: inherit;
+  width: inherit;
+  height: inherit;
+  top: 44.65%;
+}
+
+.Terreos{
+  position: inherit;
+  width: inherit;
+  height: inherit;
+  left: 52.8%;
+  top: 31.55%;
+}
+
+.Carbonoideos{
+  position: inherit;
+  width: inherit;
+  height: inherit;
+  left: 55.95%;
+  top: 31.55%;
+}
+
+.Nitrogenoideos{
+  position: inherit;
+  width: inherit;
+  height: inherit;
+  left: 59.1%;
+  top: 31.55%;
+}
+
+.Anfigenos{
+  position: inherit;
+  width: inherit;
+  height: inherit;
+  left: 62.25%;
+  top: 31.55%;
+}
+
+.Halogenos{
+  position: inherit;
+  width: inherit;
+  height: inherit;
+  left: 65.4%;
+  top: 31.55%;
+}
+
+.GasesNobles{
+  position: inherit;
+  width: inherit;
+  height: inherit;
+  left: 68.55%;
+  top: 25%;
+}
+
+/*Elementos dentro del contenedor MetalesTransicion*/
+.M1{
+  position: inherit;
+  width: inherit;
+  height: inherit;
+  top: inherit;
+  left: 21.3%;
+}
+
+.M2{
+  position: inherit;
+  width: inherit;
+  height: inherit;
+  top: inherit;
+  left: 24.45%;
+}
+
+.M3{
+  position: inherit;
+  width: inherit;
+  height: inherit;
+  top: inherit;
+  left: 27.6%;
+}
+
+.M4{
+  position: inherit;
+  width: inherit;
+  height: inherit;
+  top: inherit;
+  left: 30.75%;
+}
+
+.M5{
+  position: inherit;
+  width: inherit;
+  height: inherit;
+  top: inherit;
+  left: 33.9%;
+}
+
+.M6{
+  position: inherit;
+  width: inherit;
+  height: inherit;
+  top: inherit;
+  left: 37.05%;
+}
+
+.M7{
+  position: inherit;
+  width: inherit;
+  height: inherit;
+  top: inherit;
+  left: 40.2%;
+}
+
+.M8{
+  position: inherit;
+  width: inherit;
+  height: inherit;
+  top: inherit;
+  left: 43.35%;
+}
+
+.M9{
+  position: inherit;
+  width: inherit;
+  height: inherit;
+  top: inherit;
+  left: 46.5%;
+}
+
+.M10{
+  position: inherit;
+  width: inherit;
+  height: inherit;
+  top: inherit;
+  left: 49.65%;
+}
