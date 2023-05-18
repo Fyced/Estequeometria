@@ -1,5 +1,7 @@
 //Probar añadiendo a cada elemento %d y que en elementosFormulaReactivo se guarde tmb el que sera numeroElementosReactivoFormula || Ej. input NaO2 --> Na, O2
 
+//Probar que cuando se guarda el elemento, una vez ya se ha guardado el primero, poner un if que compruebe para que no se guarde uno más por error
+
 var alto = 50;
 var largo = 70;
 
