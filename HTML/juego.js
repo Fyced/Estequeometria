@@ -2,6 +2,8 @@
 
 //Probar que cuando se guarda el elemento, una vez ya se ha guardado el primero, poner un if que compruebe para que no se guarde uno más por error
 
+//Probar que al estar analizando la fórmula para ver los elementos q tiene, al identificarlo, eliminarlo para que no se pueda confundir con los siguientes
+
 var alto = 50;
 var largo = 70;
 
