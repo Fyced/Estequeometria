@@ -6,6 +6,7 @@ var elementos = ["Li","Na","K","Rb","Cs","Fr","Be","Mg","Ca","Sr","Ba","Ra","Sc"
                 "In","Tl","Si","Ge","Sn","Pb","As","Sb","Bi","O","Se","Te","Po","F","Cl",
                 "Br","I","At","H","N","P","B","C","S"];
 
+
 	//Variables Reactivos
 var elementosFormulaReactivo = [];
 var formulaReactivo = [];
@@ -18,8 +19,11 @@ var numeroElementosReactivoFormula = [];
 	//Variables Productos
 var elementosFormulaProductos = [];
 var formulaProductos = [];
-//Variable que te dice las veces que se repiten los elementos del producto
+  //Variable que te dice las veces que se repiten los elementos del producto
 var numeroElementosProductos = [];
+  //Variable que te dice las veces que se repiten los elementos del reactivo en la misma formulas
+var numeroElementosProductosFormula = [];
+
 
 	//FUNCIONES REACTIVOS
 function dibujarReactivos(numero){
@@ -100,54 +104,7 @@ numeroElementosReactivo.push(elementosFormulaReactivo[i]+n);
 comprobar();
 }
 
-
-	//FUNCIONES PRODUCTOS
-function dibujarProductos(numero){
-var n = numero;
-
-	//Método para captar las formulas quimicas, tiene que mejorarse después
-  for(let i = 0; i<n;i++){
-    formulaProductos[i] = prompt("Pon la formula nº" + i);
-  }
-
-guardarElementosProductos();
-}
-
-function guardarElementosProductos(){
-	//Guardar los elementos que se usan en las formulas quimicas
-  for(let e = 0; e < formulaProductos.length; e++){
-    for(let i = 0; i < elementos.length - 1; i++){
-      if(formulaProductos[e].includes(elementos[i])==true){
-        elementosFormulaProductos.push(elementos[i]);
-      }
-    }
-  }
-
-	//Bucle para aumentar numeroElementos dependiendo de los elementos que hayan en la formula
-  for(let i = 0; i<elementosFormulaProductos.length; i++){
-  numeroElementosProductos.push(1);
-  }
-
-verSiSeRepitenProductos();
-}
-
-function verSiSeRepitenProductos(){
-for(let i = 0; i<elementosFormulaProductos.length; i++){
-  var n = 1;
-for(let e = 0; e<elementosFormulaProductos.length; e++){
-if(i!=e){
-if(elementosFormulaProductos[i]==elementosFormulaProductos[e]){
-elementosFormulaProductos.splice(e,1);
-numeroElementosProductos.push(elementosFormulaProductos);
-numeroElementosProductos[i]++;
-}
-}
-}
-}
-comprobarP();
-}
-
-	//FUNCIONES PARA COMPROBAR
+//Comprobar Reactivos
 function comprobar(){
 console.log("Formulas quimicas");
 for(let i = 0; i<formulaReactivo.length; i++){
@@ -169,21 +126,95 @@ for(let i = 0; i<numeroElementosReactivoFormula.length;i++){
 }
 }
 
-	//Comprobar productos
-function comprobarP(){
-console.log("Formulas quimicas");
-for(let i = 0; i<formulaProductos.length; i++){
-  console.log(formulaProductos[i]);
-}
-console.log("Elementos");
-for(let i = 0; i<elementosFormulaProductos.length - 1; i++){
-  console.log(elementosFormulaProductos[i]);
+
+//FUNCIONES PRODUCTOS
+function dibujarProductos(numero){
+var n = numero;
+
+//Método para captar las formulas quimicas, tiene que mejorarse después
+for(let i = 0; i<n;i++){
+  formulaProductos[i] = prompt("Pon la formula nº" + i);
 }
 
-console.log("Ver si se repiten");
-for(let i = 0; i<numeroElementosProductos.length - 1; i++){
-  console.log(numeroElementosProductos[i]);
+guardarElementosProductos();
 }
+
+function guardarElementosProductos(){
+  var numeros = ["0","1","2","3","4","5","6","7","8","9",""];
+  var copiaFormulaProductos = [];
+  var comprobarSiElementoSeIncluye = [];
+
+  //Se copia la formulaReactivo en otra variable porque tras analizarla se elimina su contenido y lo necesitamos luego
+  for(let i = 0; i<formulaProductos.length; i++){
+    copiaFormulaProductos.push(formulaProductos[i]);
+  }
+
+//Guardar los elementos que se usan en las formulas quimicas
+for(let e = 0; e < formulaProductos.length; e++){
+  for(let i = 0; i < elementos.length; i++){
+    if(formulaProductos[e].includes(elementos[i])==true){
+      formulaProductos[e] = formulaProductos[e].replace(elementos[i],"");
+      elementosFormulaProductos.push(elementos[i]);
+    }
+  }
+}
+
+//Se crean todas las combinaciones de elementos que hay y numeros
+for(let e = 0; e<elementosFormulaProductos.length; e++){
+  for(let i = 0; i<numeros.length; i++){
+    comprobarSiElementoSeIncluye.push(elementosFormulaProductos[e] + numeros[i]);
+  }
+}
+
+//Bucle para ver cuantas veces se repiten los elementos dentro de la misma formula.
+for(let e = 0; e<copiaFormulaProductos.length; e++){
+for(let i = 0; i<comprobarSiElementoSeIncluye.length; i++){
+if(copiaFormulaProductos[e].includes(comprobarSiElementoSeIncluye[i])==true){
+numeroElementosProductosFormula.push(comprobarSiElementoSeIncluye[i]);
+copiaFormulaProductos[e] = copiaFormulaProductos[e].replace(comprobarSiElementoSeIncluye[i],"");
+}
+}
+}
+
+verSiSeRepitenProductos();
+}
+
+function verSiSeRepitenProductos(){
+for(let i = 0; i<elementosFormulaProductos.length; i++){
+var n = 1;
+for(let e = 0; e<elementosFormulaProductos.length; e++){
+if(i!=e){
+if(elementosFormulaProductos[i]==elementosFormulaProductos[e]){
+  elementosFormulaProductos.splice(e,1);
+  n++;
+  numeroElementosProductos.push(elementosFormulaProductos[i]+n);
+}
+}
+}
+}
+comprobarP();
+}
+
+//Comprobar productos
+function comprobarP(){
+  console.log("Formulas quimicas");
+  for(let i = 0; i<formulaProductos.length; i++){
+    console.log(formulaProductos[i]);
+  }
+  console.log("Elementos");
+  for(let i = 0; i<elementosFormulaProductos.length; i++){
+    console.log(elementosFormulaProductos[i]);
+  }
+
+  console.log("Ver si se repiten");
+  for(let i = 0; i<numeroElementosProductos.length; i++){
+    console.log(numeroElementosProductos[i]);
+  }
+
+  console.log("Veces que se repiten los elementos en la formula")
+  for(let i = 0; i<numeroElementosProductosFormula.length;i++){
+    console.log(numeroElementosProductosFormula[i]);
+  }
 }
 
 function crearForm(numero){
