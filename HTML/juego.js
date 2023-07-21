@@ -75,13 +75,23 @@ function guardarElementosReactivo(){
 }*/
 
     //Bucle para ver cuantas veces se repiten los elementos dentro de la misma formula.
-  for(let e = 0; e<copiaFormulaReactivo.length; e++){
-  for(let i = 0; i<comprobarSiElementoSeIncluye.length; i++){
-  if(copiaFormulaReactivo[e].includes(comprobarSiElementoSeIncluye[i])==true){
-  numeroElementosReactivoFormula.push(comprobarSiElementoSeIncluye[i]);
-  copiaFormulaReactivo[e] = copiaFormulaReactivo[e].replace(comprobarSiElementoSeIncluye[i],"");
-}
+for(let e = 0; e<copiaFormulaReactivo.length; e++){
+for(let i = 0; i<comprobarSiElementoSeIncluye.length; i++){
+if(copiaFormulaReactivo[e].includes(comprobarSiElementoSeIncluye[i])==true){
+  var l = true;
+  for(let u = 0; u<elementosFormulaReactivo.length; u++){
+    if(comprobarSiElementoSeIncluye[i]==elementosFormulaReactivo[u]+""){
+      numeroElementosReactivoFormula.push(comprobarSiElementoSeIncluye[i] + "1");
+      l = false;
+    }
   }
+
+  if(l == true){
+    numeroElementosReactivoFormula.push(comprobarSiElementoSeIncluye[i]);
+  }
+copiaFormulaReactivo[e] = copiaFormulaReactivo[e].replace(comprobarSiElementoSeIncluye[i],"");
+}
+}
 }
 
 verSiSeRepitenReactivos();
@@ -170,7 +180,17 @@ for(let e = 0; e<elementosFormulaProductos.length; e++){
 for(let e = 0; e<copiaFormulaProductos.length; e++){
 for(let i = 0; i<comprobarSiElementoSeIncluye.length; i++){
 if(copiaFormulaProductos[e].includes(comprobarSiElementoSeIncluye[i])==true){
-numeroElementosProductosFormula.push(comprobarSiElementoSeIncluye[i]);
+  var l = true;
+  for(let u = 0; u<elementosFormulaProductos.length; u++){
+    if(comprobarSiElementoSeIncluye[i]==elementosFormulaProductos[u]+""){
+      numeroElementosProductosFormula.push(comprobarSiElementoSeIncluye[i] + "1");
+      l = false;
+    }
+  }
+
+  if(l == true){
+    numeroElementosProductosFormula.push(comprobarSiElementoSeIncluye[i]);
+  }
 copiaFormulaProductos[e] = copiaFormulaProductos[e].replace(comprobarSiElementoSeIncluye[i],"");
 }
 }
